@@ -1,16 +1,19 @@
 {
-  "name": "pujs",
+  "name": "waujs",
   "version": "1.0.0",
-  "main": "dist/pujs.cjs.js",
-  "module": "dist/pujs.es.js",
-  "unpkg": "dist/pujs.umd.js",
+  "main": "dist/waujs.cjs.js",
+  "module": "dist/waujs.es.js",
+  "unpkg": "dist/waujs.umd.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
-    "import": "./dist/pujs.es.js",
-    "require": "./dist/pujs.cjs.js"
+    ".": {
+      "import": "./dist/waujs.es.js",
+      "require": "./dist/waujs.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

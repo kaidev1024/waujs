@@ -16,8 +16,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: 'src/index.js',
-      name: 'pujs',
-      fileName: (format) => `pujs.${format}.js`,
+      name: 'waujs',
+      fileName: (format) => `waujs.${format}.js`,
       formats: ['es', 'cjs', 'umd'],
     },
     rollupOptions: {
