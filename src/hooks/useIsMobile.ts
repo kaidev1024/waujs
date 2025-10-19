@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
-function useIsMobile(cutoff: number = 680): boolean {
+export const CUTOFF_WIDTH_SM = 680; // according to tailwindcss 'sm' breakpoint
+
+function useIsMobile(cutoff: number = CUTOFF_WIDTH_SM): boolean {
   // 680 is small in tailwindcss
   const [isMobile, setIsMobile] = useState(window.innerWidth < cutoff);
 
