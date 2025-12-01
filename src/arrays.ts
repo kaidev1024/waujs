@@ -37,6 +37,11 @@ class ArrayUtil {
     return [...arr!, ...newArr];
   };
 
+  static Contain = <T>(arr: undefined | T[], item: T): boolean => {
+    if (isZeroArray(arr)) return false;
+    return arr!.includes(item);
+  }
+
   static Union = <T>(a: T[], b: T[]) => a.concat(b.filter((item) => a.indexOf(item) < 0));
 }
 
