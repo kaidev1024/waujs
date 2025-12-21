@@ -1,6 +1,6 @@
 {
   "name": "waujs",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "main": "dist/waujs.cjs.js",
   "module": "dist/waujs.es.js",
   "unpkg": "dist/waujs.umd.js",
