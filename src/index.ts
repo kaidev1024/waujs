@@ -10,3 +10,4 @@ export { isZeroObject } from './common';
 export { default as ArrayUtil } from './arrays';
 export * from './hooks';
 export * from './jwt';
+export * from './time';
