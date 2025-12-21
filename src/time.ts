@@ -1,7 +1,7 @@
 
-export function parseTimeScore(score: string) {
+export function parseTime(score: string) {
   if (score === "0") {
-    return { hours: "0", minutes: "0", seconds: "0", subsecs: "0" };
+    return ["0", "0", "0", "0"];
   }
 
   const parts = score.split(":");
@@ -26,5 +26,5 @@ export function parseTimeScore(score: string) {
     minutes = parts[1];
   }
 
-  return { hours, minutes, seconds, subsecs };
+  return [hours, minutes, seconds, subsecs];
 }
