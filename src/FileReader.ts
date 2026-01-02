@@ -28,7 +28,7 @@ export const getDataUrlByS3Url = async (s3Url: string) => {
   return result?.toString() || '';
 };
 
-async function convertS3UrlToDataUrl(s3Url: string): Promise<string> {
+export async function convertS3UrlToDataUrl(s3Url: string): Promise<string> {
   const res = await fetch(s3Url);
   if (!res.ok) {
     throw new Error(`Failed to fetch image: ${res.status}`);
