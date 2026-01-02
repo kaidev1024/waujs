@@ -27,3 +27,19 @@ export const getDataUrlByS3Url = async (s3Url: string) => {
   const result = await readBlobAsync(blob);
   return result?.toString() || '';
 };
+
+async function convertS3UrlToDataUrl(s3Url: string): Promise<string> {
+  const res = await fetch(s3Url);
+  if (!res.ok) {
+    throw new Error(`Failed to fetch image: ${res.status}`);
+  }
+
+  const blob = await res.blob();
+
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result as string);
+    reader.onerror = reject;
+    reader.readAsDataURL(blob);
+  });
+}
