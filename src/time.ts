@@ -1,5 +1,5 @@
 
-export function parseTime(score: string) {
+export function parseTimeScore(score: string) {
   if (score === "0") {
     return ["0", "0", "0", "0"];
   }
