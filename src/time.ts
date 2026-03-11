@@ -29,36 +29,41 @@ export function parseTimeScore(score: string) {
   return [hours, minutes, seconds, subsecs];
 }
 
-function parseInt8(s: string, min: number, max: number): number {
-  const n = Number.parseInt(s, 10);
+function parseInt8(s: string, name: string, min: number, max: number): number {
+  const v = Number.parseInt(s, 10);
 
-  if (Number.isNaN(n)) {
-    throw new Error(`invalid value "${s}"`);
+  if (Number.isNaN(v)) {
+    throw new Error(`invalid ${name} "${s}"`);
   }
 
+  const n = v;
+
   if (n < min) {
-    throw new Error(`value ${n} cannot be less than ${min}`);
+    throw new Error(`${name} is less than min ${min}`);
   }
 
   if (n > max) {
-    throw new Error(`value ${n} cannot be greater than ${max}`);
+    throw new Error(`${name} is greater than max ${max}`);
   }
 
   return n;
 }
 
 export function parseSubsecs(s: string): number {
-  return parseInt8(s, 0, 99);
+  if (s.length === 1) {
+    s += "0";
+  }
+  return parseInt8(s, "value", 0, 99);
 }
 
 export function parseSeconds(s: string): number {
-  return parseInt8(s, 0, 59);
+  return parseInt8(s, "seconds", 0, 59);
 }
 
 export function parseMinutes(s: string): number {
-  return parseInt8(s, 0, 59);
+  return parseInt8(s, "minutes", 0, 59);
 }
 
 export function parseHours(s: string): number {
-  return parseInt8(s, 0, 127);
+  return parseInt8(s, "hours", 0, 127);
 }
