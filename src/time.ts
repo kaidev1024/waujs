@@ -39,11 +39,11 @@ function parseInt8(s: string, name: string, min: number, max: number): number {
   const n = v;
 
   if (n < min) {
-    throw new Error(`${name} is less than min ${min}`);
+    throw new Error(`${name} cannot be less than ${min}`);
   }
 
   if (n > max) {
-    throw new Error(`${name} is greater than max ${max}`);
+    throw new Error(`${name} cannot be greater than ${max}`);
   }
 
   return n;
